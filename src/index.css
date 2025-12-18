@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(#ffe8c5, #fff4b8);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: center;   /* centers content horizontally */
+  align-items: center;
+  gap: 40px;                  /* spacing between title + links */
+  padding: 14px 40px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(255,185,50,0.25);
+}
+
+/* optional: remove the auto-left from before */
+.navbar h2 {
+  font-size: 1.5rem;
+  color: #e28a00;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+.nav-links a {
+  color: #e28a00;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+.nav-links a:hover{
+  opacity:.6;
+}
+
+/* Video container */
+.video-bg-container{
+  height: 100vh;
+  width:100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  pointer-events:none;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(255,200,80,.25);
+}
+
+
+/* ========= RESPONSIVE BREAKPOINTS ========= */
+
+/* screens < 768px (tablets + phones) */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+  .navbar h2 {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    gap: 14px;
+  }
+  .nav-links a{
+    font-size: .9rem;
+  }
+}
+
+/* screens < 480px (phones) */
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    height:auto;
+    padding: 10px;
+  }
+
+  .nav-links {
+    margin-top: 8px;
+  }
+}
