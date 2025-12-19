@@ -1,22 +1,27 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
 import Home from "./component/home/home";
 import Preset from "./component/preset/preset";
 
 export default function App() {
+  const [page, setPage] = useState("home");
+
   return (
-    <BrowserRouter>
+    <div>
       <nav className="navbar">
-        <h2 style={{color:"white"}}></h2>
+        <h2 style={{ color: "white" }}></h2>
+
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/preset">Preset</Link>
+          <button className="nav-btn" onClick={() => setPage("home")}>
+            Home
+          </button>
+          <button className="nav-btn" onClick={() => setPage("preset")}>
+            Preset
+          </button>
         </div>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/preset" element={<Preset />} />
-      </Routes>
-    </BrowserRouter>
+      {page === "home" && <Home />}
+      {page === "preset" && <Preset />}
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+/* RESET + BASE */
 * {
   margin: 0;
   padding: 0;
@@ -11,21 +12,19 @@ body {
 }
 
 /* NAVBAR */
-
 .navbar {
+  position: sticky;
+  top: 0;
   display: flex;
-  justify-content: center;   /* centers content horizontally */
+  justify-content: center;
   align-items: center;
-  gap: 40px;                  /* spacing between title + links */
+  gap: 40px;
   padding: 14px 40px;
   background: rgba(255,255,255,0.55);
   backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
   border-bottom: 1px solid rgba(255,185,50,0.25);
 }
 
-/* optional: remove the auto-left from before */
 .navbar h2 {
   font-size: 1.5rem;
   color: #e28a00;
@@ -36,7 +35,6 @@ body {
   gap: 20px;
 }
 
-
 .nav-links a {
   color: #e28a00;
   font-weight: 600;
@@ -44,59 +42,69 @@ body {
   transition: opacity .3s;
 }
 
-.nav-links a:hover{
-  opacity:.6;
+.nav-links a:hover {
+  opacity: .6;
 }
 
-/* Video container */
-.video-bg-container{
+.nav-btn {
+  background: none;
+  border: none;
+  color: #e28a00;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity .3s;
+}
+
+.nav-btn:hover {
+  opacity: .6;
+}
+
+/* VIDEO BG */
+.video-bg-container {
   height: 100vh;
-  width:100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
 
-.video-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  pointer-events:none;
+.video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(255,200,80,.25);
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,200,80,.25);
 }
 
-
-/* ========= RESPONSIVE BREAKPOINTS ========= */
-
-/* screens < 768px (tablets + phones) */
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .navbar {
     padding: 12px 20px;
   }
+
   .navbar h2 {
     font-size: 1.2rem;
   }
+
   .nav-links {
     gap: 14px;
   }
-  .nav-links a{
+
+  .nav-links a {
     font-size: .9rem;
   }
 }
 
-/* screens < 480px (phones) */
-
 @media (max-width: 480px) {
   .navbar {
     flex-direction: column;
-    height:auto;
     padding: 10px;
   }
 
